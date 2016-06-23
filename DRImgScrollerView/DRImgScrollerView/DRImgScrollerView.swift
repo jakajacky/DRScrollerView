@@ -22,10 +22,13 @@ class DRImgScrollerView: UIView {
     
     var pageControl:UIPageControl
     
+    var timer:NSTimer?
+    
     override init(frame: CGRect) {
         
         scrollView = UIScrollView(frame: frame)
         pageControl = UIPageControl(frame: CGRectMake(0, 180, 375, 10))
+        
         super.init(frame: frame)
     }
     
@@ -51,6 +54,7 @@ class DRImgScrollerView: UIView {
         imgView.frame = CGRectMake(0, 0, width, height)
         scrollView.addSubview(imgView)
         
+        // 正式页
         for i in 0..<count {
             imgView = UIImageView(image: imgArray[i] as? UIImage)
             imgView.frame = CGRectMake(CGFloat(i + 1) * width, 0, width, height)
@@ -70,11 +74,43 @@ class DRImgScrollerView: UIView {
         print("-------\(pageControl.currentPage)")
         self.addSubview(pageControl)
         
+        // 时间触发器
+        timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(DRImgScrollerView.run), userInfo: nil, repeats: true)
+        self.performSelector(#selector(DRImgScrollerView.fire), withObject: nil, afterDelay: 5)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    func run() -> Void {
+        var index:Int = pageControl.currentPage + 1
+        index += 1
+        print(index)
+        
+        if index == 6 {
+            scrollView.setContentOffset(CGPointMake(CGFloat(2) * width, 0), animated: false)
+        }
+        else if index == 5 {
+            scrollView.setContentOffset(CGPointMake(CGFloat(index) * width, 0), animated: true)
+            
+            self.performSelector(#selector(DRImgScrollerView.delay), withObject: nil, afterDelay: 1)
+            
+        }
+        else {
+            scrollView.setContentOffset(CGPointMake(CGFloat(index) * width, 0), animated: true)
+        }
+    }
+    
+    func delay() -> Void {
+        scrollView.setContentOffset(CGPointMake(CGFloat(1) * width, 0), animated: false)
+    }
+    
+    func fire() -> Void {
+        timer?.fire()
+    }
+    
 }
 
 extension DRImgScrollerView : UIScrollViewDelegate {
@@ -94,8 +130,15 @@ extension DRImgScrollerView : UIScrollViewDelegate {
         
     }
 
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        // 取消timer
+        timer?.pauseTimer()
+    }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        // 开始timer
+        timer?.resumeTimer()
         
         let pageNum = scrollView.contentOffset.x / width
         if pageNum < 0.5 {
@@ -106,9 +149,31 @@ extension DRImgScrollerView : UIScrollViewDelegate {
         }
     }
     
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+    }
+    
     func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
         yesToLoad += 1
     }
 
     
+}
+
+extension NSTimer {
+    func pauseTimer() -> Void {
+        if !self.valid {
+            return
+        }
+        
+        self.fireDate = NSDate.distantFuture()
+    }
+    
+    func resumeTimer() -> Void {
+        if !self.valid {
+            return
+        }
+        
+        self.fireDate = NSDate()
+    }
 }
