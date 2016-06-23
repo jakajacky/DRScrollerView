@@ -14,6 +14,13 @@
 		F2A16D641D17A47400797472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D621D17A47400797472 /* LaunchScreen.storyboard */; };
 		F2A16D6F1D17A47400797472 /* DRImgScrollerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A16D6E1D17A47400797472 /* DRImgScrollerViewTests.swift */; };
 		F2A16D7A1D17A47400797472 /* DRImgScrollerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A16D791D17A47400797472 /* DRImgScrollerViewUITests.swift */; };
+		F2A16D8B1D17BE8000797472 /* image0.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D871D17BE8000797472 /* image0.png */; };
+		F2A16D8C1D17BE8000797472 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D881D17BE8000797472 /* image1.png */; };
+		F2A16D8D1D17BE8000797472 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D891D17BE8000797472 /* image2.png */; };
+		F2A16D8E1D17BE8000797472 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D8A1D17BE8000797472 /* image3.png */; };
+		F2A16D911D17C04D00797472 /* DRImgScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A16D901D17C04D00797472 /* DRImgScrollerView.swift */; };
+		F2A16D951D17DB1000797472 /* pageControlCurrentDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D931D17DB1000797472 /* pageControlCurrentDot@2x.png */; };
+		F2A16D961D17DB1000797472 /* pageControlDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A16D941D17DB1000797472 /* pageControlDot@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		F2A16D751D17A47400797472 /* DRImgScrollerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DRImgScrollerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A16D791D17A47400797472 /* DRImgScrollerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRImgScrollerViewUITests.swift; sourceTree = "<group>"; };
 		F2A16D7B1D17A47400797472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2A16D871D17BE8000797472 /* image0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image0.png; sourceTree = "<group>"; };
+		F2A16D881D17BE8000797472 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		F2A16D891D17BE8000797472 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		F2A16D8A1D17BE8000797472 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		F2A16D901D17C04D00797472 /* DRImgScrollerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRImgScrollerView.swift; sourceTree = "<group>"; };
+		F2A16D931D17DB1000797472 /* pageControlCurrentDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlCurrentDot@2x.png"; sourceTree = "<group>"; };
+		F2A16D941D17DB1000797472 /* pageControlDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pageControlDot@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +113,15 @@
 			children = (
 				F2A16D591D17A47400797472 /* AppDelegate.swift */,
 				F2A16D5B1D17A47400797472 /* ViewController.swift */,
+				F2A16D8F1D17C00900797472 /* DRImgScrollerView */,
 				F2A16D5D1D17A47400797472 /* Main.storyboard */,
 				F2A16D601D17A47400797472 /* Assets.xcassets */,
 				F2A16D621D17A47400797472 /* LaunchScreen.storyboard */,
 				F2A16D651D17A47400797472 /* Info.plist */,
+				F2A16D871D17BE8000797472 /* image0.png */,
+				F2A16D881D17BE8000797472 /* image1.png */,
+				F2A16D891D17BE8000797472 /* image2.png */,
+				F2A16D8A1D17BE8000797472 /* image3.png */,
 			);
 			path = DRImgScrollerView;
 			sourceTree = "<group>";
@@ -123,6 +142,24 @@
 				F2A16D7B1D17A47400797472 /* Info.plist */,
 			);
 			path = DRImgScrollerViewUITests;
+			sourceTree = "<group>";
+		};
+		F2A16D8F1D17C00900797472 /* DRImgScrollerView */ = {
+			isa = PBXGroup;
+			children = (
+				F2A16D901D17C04D00797472 /* DRImgScrollerView.swift */,
+				F2A16D921D17DB0000797472 /* Recourse */,
+			);
+			path = DRImgScrollerView;
+			sourceTree = "<group>";
+		};
+		F2A16D921D17DB0000797472 /* Recourse */ = {
+			isa = PBXGroup;
+			children = (
+				F2A16D931D17DB1000797472 /* pageControlCurrentDot@2x.png */,
+				F2A16D941D17DB1000797472 /* pageControlDot@2x.png */,
+			);
+			path = Recourse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +230,7 @@
 				TargetAttributes = {
 					F2A16D551D17A47400797472 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 22X7C4G62Z;
 					};
 					F2A16D691D17A47400797472 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -229,8 +267,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A16D8B1D17BE8000797472 /* image0.png in Resources */,
+				F2A16D951D17DB1000797472 /* pageControlCurrentDot@2x.png in Resources */,
+				F2A16D8C1D17BE8000797472 /* image1.png in Resources */,
+				F2A16D8D1D17BE8000797472 /* image2.png in Resources */,
 				F2A16D641D17A47400797472 /* LaunchScreen.storyboard in Resources */,
 				F2A16D611D17A47400797472 /* Assets.xcassets in Resources */,
+				F2A16D961D17DB1000797472 /* pageControlDot@2x.png in Resources */,
+				F2A16D8E1D17BE8000797472 /* image3.png in Resources */,
 				F2A16D5F1D17A47400797472 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A16D911D17C04D00797472 /* DRImgScrollerView.swift in Sources */,
 				F2A16D5C1D17A47400797472 /* ViewController.swift in Sources */,
 				F2A16D5A1D17A47400797472 /* AppDelegate.swift in Sources */,
 			);
@@ -401,10 +446,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DRImgScrollerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideabinder.DRImgScrollerView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -412,10 +460,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DRImgScrollerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideabinder.DRImgScrollerView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -484,6 +535,7 @@
 				F2A16D801D17A47400797472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2A16D811D17A47400797472 /* Build configuration list for PBXNativeTarget "DRImgScrollerViewTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +544,7 @@
 				F2A16D831D17A47400797472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2A16D841D17A47400797472 /* Build configuration list for PBXNativeTarget "DRImgScrollerViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +553,7 @@
 				F2A16D861D17A47400797472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
