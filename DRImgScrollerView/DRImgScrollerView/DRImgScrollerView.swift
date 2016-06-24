@@ -8,6 +8,9 @@
 
 import UIKit
 
+// 定义闭包
+typealias SendValueClosure = (index:CGFloat) -> Void
+
 class DRImgScrollerView: UIView {
     
     var width:CGFloat = 0.0
@@ -18,11 +21,14 @@ class DRImgScrollerView: UIView {
     
     var imgArray:NSMutableArray?
     
+    var timer:NSTimer?
+    
+    // 声明一个闭包
+    var sendValue:SendValueClosure?
+    
     var scrollView:UIScrollView
     
     var pageControl:UIPageControl
-    
-    var timer:NSTimer?
     
     override init(frame: CGRect) {
         
@@ -83,7 +89,7 @@ class DRImgScrollerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    // 时间器触发动作
     func run() -> Void {
         var index:Int = pageControl.currentPage + 1
         index += 1
@@ -103,16 +109,19 @@ class DRImgScrollerView: UIView {
         }
     }
     
+    // 延时首尾切换
     func delay() -> Void {
         scrollView.setContentOffset(CGPointMake(CGFloat(1) * width, 0), animated: false)
     }
     
+    // 延时启动时间器
     func fire() -> Void {
         timer?.fire()
     }
     
 }
 
+// DRImgScrollerView延展，遵循代理
 extension DRImgScrollerView : UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -126,6 +135,11 @@ extension DRImgScrollerView : UIScrollViewDelegate {
         }
         else {
             pageControl.currentPage = Int(round(pageNum - 1))
+        }
+        
+        if round(pageNum) == pageNum {
+            // 闭包传值
+            sendValue?(index: pageNum)
         }
         
     }
@@ -160,7 +174,9 @@ extension DRImgScrollerView : UIScrollViewDelegate {
     
 }
 
+// 扩展NSTimer方法
 extension NSTimer {
+    
     func pauseTimer() -> Void {
         if !self.valid {
             return
